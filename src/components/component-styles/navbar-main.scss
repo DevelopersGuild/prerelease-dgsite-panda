@@ -1,4 +1,25 @@
 .navbar-main {
   color: #ffffff;
   background-color: #ffffff;
+
+  @media (min-width: 576px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media (min-width: 768px) {
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+  @media (min-width: 992px) {
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+  @media (min-width: 1200px) {
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+  @media (min-width: 1400px) {
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
 }

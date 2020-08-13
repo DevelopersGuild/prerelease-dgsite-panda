@@ -1,26 +1,60 @@
 import React from "react"
-import "../styles/main.scss"
+import { graphql } from "gatsby"
+import { Jumbotron } from "react-bootstrap"
 import Container from "../components/container"
 import NavBarMain from "../components/navbar-main"
+import DiscordLink from "../components/discord-link"
+import Curated from "../components/curated"
+import "../styles/main.scss"
+import "../styles/index.scss"
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <NavBarMain />
+      <br />
       <Container>
-        <h1>Hello world!</h1>
-        <p>
-          Kickstarter plaid kitsch, hexagon waistcoat cray stumptown DIY.
-          Kinfolk raclette prism messenger bag freegan man bun pitchfork keytar
-          hoodie fingerstache. Hella sriracha forage shoreditch, cronut etsy
-          pork belly man braid man bun thundercats typewriter. Irony craft beer
-          paleo yr polaroid roof party, cliche pinterest waistcoat fanny pack
-          PBR&B viral green juice live-edge 3 wolf moon. Activated charcoal
-          craft beer cold-pressed hoodie occupy. Pug four loko tattooed ramps,
-          man braid enamel pin paleo fingerstache artisan polaroid fixie
-          church-key. Messenger bag chillwave chartreuse celiac occupy.
-        </p>
+        <DiscordLink className="float-right" />
+        <br />
+        <br />
+        <br />
+        <Jumbotron>
+          <div className="jumbo-container">
+            <img
+              className="jumbo-image"
+              src={data.logo.publicURL}
+              alt={data.logo.id}
+            />
+            <div>
+              <h1>Developers Guild - De Anza</h1>
+              <p>A project and contribution based programming club.</p>
+              <p>
+                Fridays 1:30PM-4:00PM
+                <span style={{ textDecoration: "line-through" }}>AT311</span>
+                <strong> Discord & Zoom</strong>
+              </p>
+            </div>
+          </div>
+        </Jumbotron>
+        <br />
+        <Curated curatedDataCollection={data.curated.nodes} />
       </Container>
     </>
   )
 }
+
+export const query = graphql`
+  query HomePageQuery {
+    logo: file(relativePath: { eq: "logo.svg" }) {
+      id
+      publicURL
+    }
+    curated: allCuratedJson {
+      nodes {
+        id
+        source
+        recommendedBy
+      }
+    }
+  }
+`
