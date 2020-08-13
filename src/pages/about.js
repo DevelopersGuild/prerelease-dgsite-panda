@@ -5,6 +5,7 @@ import NavbarMain from "../components/navbar-main"
 import "../styles/image-headers.scss"
 import "../styles/about.scss"
 import Img from "gatsby-image"
+import { Helmet } from "react-helmet"
 
 export default ({ data }) => (
   <>

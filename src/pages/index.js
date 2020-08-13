@@ -8,6 +8,7 @@ import Curated from "../components/curated"
 import GithubBar from "../components/github-bar"
 import "../styles/main.scss"
 import "../styles/index.scss"
+import { Helmet } from "react-helmet"
 
 export default function Home({ data }) {
   return (

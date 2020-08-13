@@ -7,6 +7,7 @@ import SaferLink from "../components/safer-link"
 import Img from "gatsby-image"
 import "../styles/image-headers.scss"
 import "../styles/contact.scss"
+import { Helmet } from "react-helmet"
 
 export default ({ data }) => (
   <>
