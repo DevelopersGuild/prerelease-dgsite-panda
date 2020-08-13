@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet"
 
 export default ({ data }) => (
   <>
+    <Helmet title="About | Developers Guild" defer={false} />
     <NavbarMain />
     <br />
     <div className="container-one">
