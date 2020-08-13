@@ -17,7 +17,10 @@ function DiscordLink({ className, style }) {
   const data = useStaticQuery(DiscordQuery)
   return (
     <SaferLink
-      className={clsx("btn btn-primary discord-btn bounce-in-top", className)}
+      className={clsx(
+        "text-white font-bold py-2 px-4 rounded btn btn-primary discord-btn bounce-in-top",
+        className
+      )}
       style={style}
       href="https://discord.gg/BpaFS4h"
     >
