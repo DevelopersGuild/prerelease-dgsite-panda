@@ -38,6 +38,8 @@ export default function Home({ data }) {
         </Jumbotron>
         <br />
         <Curated curatedDataCollection={data.curated.nodes} />
+        <br />
+        <br />
       </Container>
     </>
   )
