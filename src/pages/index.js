@@ -5,6 +5,7 @@ import Container from "../components/container"
 import NavBarMain from "../components/navbar-main"
 import DiscordLink from "../components/discord-link"
 import Curated from "../components/curated"
+import GithubBar from "../components/github-bar"
 import "../styles/main.scss"
 import "../styles/index.scss"
 
@@ -39,6 +40,7 @@ export default function Home({ data }) {
         <br />
         <Curated curatedDataCollection={data.curated.nodes} />
         <br />
+        <GithubBar />
         <br />
       </Container>
     </>
