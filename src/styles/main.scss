@@ -3,6 +3,7 @@ $black: #212529;
 $whitish: #ecf0f1;
 $blueish: #3e8cbf;
 $discordcolor: #7289da;
+$white: #ffffff;
 
 .primary-header {
   color: $blueish;
@@ -52,5 +53,5 @@ $discordcolor: #7289da;
 
 html {
   @include standardfonts;
-  background-color: $whitish;
+  background-color: $white;
 }
