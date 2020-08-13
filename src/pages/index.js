@@ -6,7 +6,6 @@ import NavBarMain from "../components/navbar-main"
 import DiscordLink from "../components/discord-link"
 import Curated from "../components/curated"
 import GithubBar from "../components/github-bar"
-import "../styles/main.scss"
 import "../styles/index.scss"
 import { Helmet } from "react-helmet"
 

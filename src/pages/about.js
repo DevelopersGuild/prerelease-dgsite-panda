@@ -6,7 +6,6 @@ import "../styles/image-headers.scss"
 import "../styles/about.scss"
 import Img from "gatsby-image"
 import { Helmet } from "react-helmet"
-import "../styles/main.scss"
 
 export default ({ data }) => (
   <>
