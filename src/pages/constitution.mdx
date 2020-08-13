@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet"
 import Container from "../components/container"
 import NavBarMain from "../components/navbar-main"
 import "../styles/image-headers.scss"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 <Helmet title="Club Constitution" defer={false} />
 <NavBarMain />
@@ -9,6 +11,12 @@ import "../styles/image-headers.scss"
 <br />
 
 # Club Constitution
+
+<Img
+  className="open-source-header base-image"
+  fluid={props.data.constitution.childImageSharp.fluid}
+  alt={props.data.constitution.id}
+/>
 
 <br />
 
@@ -197,3 +205,16 @@ Any amendment change requires a simple majority vote among Club Leadership and m
 be approved at the ICC Agenda Meeting.
 
 </Container>
+
+export const ConstitutionPageQuery = graphql`
+  query ConstitutionPageQuery {
+    constitution: file(relativePath: { eq: "the-creation-of-design.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

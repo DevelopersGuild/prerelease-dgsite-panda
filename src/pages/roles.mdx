@@ -2,11 +2,19 @@ import { Helmet } from "react-helmet"
 import Container from "../components/container"
 import NavBarMain from "../components/navbar-main"
 import "../styles/image-headers.scss"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 <Helmet title="Roles with the Developers Guild" defer={false} />
 <NavBarMain />
 <Container>
 <br />
+
+<Img
+  className="open-source-header base-image"
+  fluid={props.data.roles.childImageSharp.fluid}
+  alt={props.data.roles.id}
+/>
 
 ## Event Organizer 👋🗣
 
@@ -23,3 +31,16 @@ are suitable for use by those with physical disabilities and research
 the potential Localization of Software to Spanish and Mandarin.
 
 </Container>
+
+export const RolesPageQuery = graphql`
+  query RolesPageQueryPageQuery {
+    roles: file(relativePath: { eq: "roles.jpg" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

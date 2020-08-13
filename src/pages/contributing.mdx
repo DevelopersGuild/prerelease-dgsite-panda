@@ -2,11 +2,19 @@ import { Helmet } from "react-helmet"
 import Container from "../components/container"
 import NavBarMain from "../components/navbar-main"
 import "../styles/image-headers.scss"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 <Helmet title="Club Constitution" defer={false} />
 <NavBarMain />
 <Container>
 <br />
+
+<Img
+  className="open-source-header base-image"
+  fluid={props.data.contributing.childImageSharp.fluid}
+  alt={props.data.contributing.id}
+/>
 
 ##### Section 1
 
@@ -260,3 +268,16 @@ Hooray! You’ve successfully made an open source contribution!
 > Whether you just made your first open source contribution, or you’re looking for new ways to contribute, we hope you’re inspired to take action. Even if your contribution wasn’t accepted, don’t forget to say thanks when a maintainer put effort into helping you. Open source is made by people like you: one issue, pull request, comment, or high-five at a time.
 
 </Container>
+
+export const ContributingPageQuery = graphql`
+  query ContributingPageQueryPageQueryPageQuery {
+    contributing: file(relativePath: { eq: "open-source.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

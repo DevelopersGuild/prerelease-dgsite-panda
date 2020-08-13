@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { Table } from "react-bootstrap"
 import Container from "../components/container"
 import NavbarMain from "../components/navbar-main.js"
@@ -20,7 +21,7 @@ export default ({ data }) => (
       </Container>
       <Img
         className="open-source-header image-style-contact"
-        data-src={data.contact.childImageSharp.fluid}
+        fluid={data.contact.childImageSharp.fluid}
         alt={data.contact.id}
       />
       <Container type="normal">
