@@ -1,0 +1,56 @@
+$dark-gray: #343a40;
+$black: #212529;
+$whitish: #ecf0f1;
+$blueish: #3e8cbf;
+$discordcolor: #7289da;
+
+.primary-header {
+  color: $blueish;
+}
+
+@mixin opensans {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Open Sans", sans-serif;
+    color: $dark-gray;
+  }
+}
+
+@mixin roboto {
+  p,
+  b,
+  strong,
+  i,
+  em,
+  mark,
+  small,
+  del,
+  ins,
+  sub,
+  sup {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+@mixin sourcecodepro {
+  code,
+  samp,
+  pre {
+    font-family: "Source Code Pro", monospace;
+  }
+}
+
+@mixin standardfonts {
+  @include roboto;
+  @include opensans;
+  @include sourcecodepro;
+}
+
+html {
+  @include standardfonts;
+  background-color: $whitish;
+}

@@ -14,6 +14,13 @@ module.exports = {
     "gatsby-plugin-purgecss",
     "gatsby-transformer-json",
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`roboto`, `open sans`, `source code pro`],
+        display: "swap",
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
