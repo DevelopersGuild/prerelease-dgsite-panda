@@ -5,7 +5,8 @@ Guild website. All current changes to the DG site
 have or will be migrated into this repository.
 Both repos will be merged into one preserving the git
 history of both. We will perform the merging when we feel
-this site is ready for initial release.
+this site is ready for initial release. Direct any questions
+about contributing to this site before release to Johnny or Carlos.
 
 1.  **Start developing.**
 
